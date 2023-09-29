@@ -1,4 +1,4 @@
-using ReservaHotel.Data;
+using ReservaDeHotel.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

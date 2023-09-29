@@ -3,15 +3,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ReservaHotel.Data;
+using ReservaDeHotel.Data;
 
 #nullable disable
 
 namespace ReservaDeHotel.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    [Migration("20230926190134_CriacaoInicial")]
-    partial class CriacaoInicial
+    [Migration("20230929180426_primeiraMigracao")]
+    partial class primeiraMigracao
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,43 +19,30 @@ namespace ReservaDeHotel.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.11");
 
-            modelBuilder.Entity("ReservaHotel.Models.HistoricoReserva", b =>
+            modelBuilder.Entity("ReservaDeHotel.Models.Cidade", b =>
                 {
-                    b.Property<string>("Nome")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("IdCidade")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Descricao")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Nome");
+                    b.Property<string>("Estado")
+                        .HasColumnType("TEXT");
 
-                    b.ToTable("HistoricoReserva");
-                });
+                    b.Property<string>("ListaHoteis")
+                        .HasColumnType("TEXT");
 
-            modelBuilder.Entity("ReservaHotel.Models.Hotel", b =>
-                {
                     b.Property<string>("Nome")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Descricao")
+                    b.Property<string>("País")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Nome");
+                    b.HasKey("IdCidade");
 
-                    b.ToTable("Hotel");
-                });
-
-            modelBuilder.Entity("ReservaHotel.Models.Reserva", b =>
-                {
-                    b.Property<string>("Nome")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Descricao")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Nome");
-
-                    b.ToTable("Reserva");
+                    b.ToTable("Cidade");
                 });
 #pragma warning restore 612, 618
         }

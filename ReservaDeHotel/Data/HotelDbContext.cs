@@ -1,15 +1,16 @@
+using ReservaDeHotel.Models;
 using Microsoft.EntityFrameworkCore;
-using ReservaHotel.Models;
 
-namespace ReservaHotel.Data;
-
-public class HotelDbContext:DbContext
+namespace ReservaDeHotel.Data;
+public class HotelDbContext : DbContext
 {
-    public DbSet <Hotel>? Hotel {get; set;}
-    public DbSet <Reserva>? Reserva {get; set;}
-    public DbSet <HistoricoReserva>? HistoricoReserva {get; set;}
+    public DbSet<Cidade>? Cidade { get; set;}
+    public DbSet<Pagamento>? Pagamento { get; set;}
+    public DbSet<Avaliacao>? Avaliacao { get; set;}
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite("DataSource=Hotel.db;Cache=Shared");
+        optionsBuilder.UseSqlite("DataSource=bancoGeral.db;Cache=Shared");
     }
+
 }

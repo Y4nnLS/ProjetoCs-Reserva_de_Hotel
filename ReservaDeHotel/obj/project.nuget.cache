@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XGgXF1mIY0jh+Uo9aCKUJDMu0VB04r14uN9OSgQx3Uh9IgcxGjwLRWQbL4GEQRy70qgylWxhvMzvR8GA6jpIhQ==",
+  "dgSpecHash": "gjU6CmVMhQOt5TBFHyR3FKS3jyWK1qjkQ7Kn14xrh+/5LbFXcWE6kMguPeE8aik8tlvafDxm3NTSv+Y6EokBIg==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Usuário\\Documents\\GitHub\\Projeto-Reserva_de_Hotel\\ReservaDeHotel\\ReservaDeHotel.csproj",
+  "projectFilePath": "C:\\Users\\Usuário\\Documents\\GitHub\\Projeto-Reserva_de_Hotel\\ReservaDeHotel\\ReservaDeHotel.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuário\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Usuário\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
