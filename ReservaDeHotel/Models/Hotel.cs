@@ -9,7 +9,7 @@ public class Hotel
     public string? Endereco { get; set; }
     public int Classificacao { get; set; }
     public string? Descricao { get; set; }
-    public List<Comodidade>? ListaDeQuartos { get; set; }
+    public string? ListaDeQuartos { get; set; }
     public double AvaliacaoMedia { get; set; }
     public int IdDoDono { get; set; }
     public int NumeroTotalDeQuartos { get; set; }
