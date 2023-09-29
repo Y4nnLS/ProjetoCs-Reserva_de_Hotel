@@ -7,6 +7,6 @@ public class Pagamento
     public int IdPagamento {get;set;}
     public int IdReservaEstadia { get; set;}
     public string? MetodoPagamento { get; set;}
-    public float Valor { get; set;}
+    public decimal Valor { get; set;}
     public DateTime DataPagamento { get; set;}
 }

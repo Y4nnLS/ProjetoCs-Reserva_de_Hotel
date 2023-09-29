@@ -7,6 +7,9 @@ public class HotelDbContext : DbContext
     public DbSet<Cidade>? Cidade { get; set;}
     public DbSet<Pagamento>? Pagamento { get; set;}
     public DbSet<Avaliacao>? Avaliacao { get; set;}
+    public DbSet<Hotel>? Hotel { get; set;}
+    public DbSet<Comodidade>? Comodidade { get; set;}
+
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
