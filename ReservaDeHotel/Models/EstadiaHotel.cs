@@ -15,14 +15,6 @@ public class Estadia
     {
         
     }
-    public Estadia(DateTime dataEntrada, DateTime dataSaida, int qtdQuartos)
-    {
-        DataEntrada = dataEntrada;
-        DataSaida = dataSaida;
-        QtdQuartos = qtdQuartos;
-
-    }
-
     public Estadia(int qtdQuartos, DateTime dataEntrada, DateTime dataSaida)
     {
         this.qtdQuartos = qtdQuartos;
