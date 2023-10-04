@@ -10,10 +10,10 @@ public class Dono
     public string? Email { get; set;}
     public string? Login { get; set;}
     public string? Senha { get; set;}
-    public List<HotelModel> ListaHoteis { get; set;}
+    public List<Hotel>? ListaHoteis { get; set;}
 
     public Dono()
     {
-        Hoteis = new List<HotelModel>();
+        ListaHoteis = new List<Hotel>();
     }
 }

@@ -9,5 +9,6 @@ public class Cidade
     public string? Estado { get; set;}
     public string? País { get; set;}
     public string? Descricao { get; set;}
-    public string? ListaHoteis { get; set;}
+    //public string? ListaHoteis { get; set;}
+    public List<Hotel>? ListaHoteis { get; set;}
 }

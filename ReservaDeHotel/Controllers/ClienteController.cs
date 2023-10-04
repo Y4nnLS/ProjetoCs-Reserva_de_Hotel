@@ -6,8 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ReservaDeHotel.Controllers
-{
+namespace ReservaDeHotel.Controllers;
+
     [ApiController]
     [Route("[controller]")]
     public class ClienteController : ControllerBase
@@ -85,4 +85,4 @@ namespace ReservaDeHotel.Controllers
             return Ok();
         }
     }
-}
+
