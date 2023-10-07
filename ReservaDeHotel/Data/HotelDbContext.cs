@@ -11,8 +11,8 @@ public class HotelDbContext : DbContext
     public DbSet<Comodidade>? Comodidade { get; set;}
     public DbSet<Dono>? Dono { get; set;}
     public DbSet<Cliente>? Cliente { get; set;}
-    //public DbSet<EstadiaHotel>? EstadiaHotel { get; set;}
-    //public DbSet<ReservaHotel>? ReservaHotel { get; set;}
+    public DbSet<EstadiaHotel>? EstadiaHotel { get; set;}
+    public DbSet<ReservaHotel>? ReservaHotel { get; set;}
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
