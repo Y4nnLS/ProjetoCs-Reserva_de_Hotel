@@ -7,7 +7,7 @@ namespace ReservaDeHotel.Models
     {
         [Key]
         public int IdEstadia { get; set; }
-        public int QtdQuartos { get; set; }
+        public int QtdQuartos { get; set; } // n sei se faz sentido receber quantidade de quartos
         public DateTime DataEntrada { get; set; }
         public DateTime DataSaida { get; set; }
 

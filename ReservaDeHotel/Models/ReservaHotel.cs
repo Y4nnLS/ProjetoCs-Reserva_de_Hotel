@@ -9,11 +9,11 @@ namespace ReservaDeHotel.Models
         [Key]
         public int IdReserva { get; set; }
         public string? NomeHospede { get; set; }
-        public string? MetodoPagamento { get; set; }
-        public decimal Valor { get; private set; }
+        public string? MetodoPagamento { get; set; } // MetodoPagamento e Valor já estão na model Pagamento, n sei se a gente precisa ter aqui
+        public decimal Valor { get; private set; } // valor ta sendo puxado aqui também
 
         [ForeignKey("Estadia")]
-        public int IdEstadia { get; set; }
+        public int IdEstadia { get; set; } // se ele recebe a Estadia, precisa mesmo ter o IdEstadia aqui?
         public EstadiaHotel? Estadia { get; set; }
 
         public ReservaHotel()
