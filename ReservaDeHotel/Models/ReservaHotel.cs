@@ -9,35 +9,35 @@ namespace ReservaDeHotel.Models
         [Key]
         public int IdReserva { get; set; }
         public string? NomeHospede { get; set; }
-        public string? MetodoPagamento { get; set; } // MetodoPagamento e Valor já estão na model Pagamento, n sei se a gente precisa ter aqui
-        public decimal Valor { get; private set; } // valor ta sendo puxado aqui também
-
-        [ForeignKey("Estadia")]
-        public int IdEstadia { get; set; } // se ele recebe a Estadia, precisa mesmo ter o IdEstadia aqui?
+        public List<Pagamento>? Pagamento { get; set; }
+        // public string? MetodoPagamento { get; set; } // está model Pagamento
+        // public decimal Valor { get; private set; } // ta dentro da model Pagamento
+        // [ForeignKey("Estadia")]
+        // public int IdEstadia { get; set; } // se ele recebe a Estadia, precisa mesmo ter o IdEstadia aqui?
         public EstadiaHotel? Estadia { get; set; }
 
-        public ReservaHotel()
-        {
-        }
+        // public ReservaHotel()
+        // {
+        // }
 
-        public ReservaHotel(int idReserva, string nomeHospede, string metodoPagamento, EstadiaHotel estadia)
-        {
-            IdReserva = idReserva;
-            NomeHospede = nomeHospede;
-            MetodoPagamento = metodoPagamento;
+        // public ReservaHotel(int idReserva, string nomeHospede, string metodoPagamento, EstadiaHotel estadia)
+        // {
+        //     IdReserva = idReserva;
+        //     NomeHospede = nomeHospede;
+        //     MetodoPagamento = metodoPagamento;
 
-            Estadia = estadia;
-            IdEstadia = estadia.IdEstadia;
+        //     Estadia = estadia;
+        //     IdEstadia = estadia.IdEstadia;
 
-            CalcularValorReserva();
-        }
+        //     CalcularValorReserva();
+        // }
 
-        private void CalcularValorReserva()
-        {
-            TimeSpan periodoEstadia = Estadia.DataSaida - Estadia.DataEntrada;
-            int diasEstadia = periodoEstadia.Days;
+        // private void CalcularValorReserva()
+        // {
+        //     TimeSpan periodoEstadia = Estadia.DataSaida - Estadia.DataEntrada;
+        //     int diasEstadia = periodoEstadia.Days;
 
-            Valor = diasEstadia * Estadia.QtdQuartos;
-        }
+        //     Valor = diasEstadia * Estadia.QtdQuartos;
+        // }
     }
 }

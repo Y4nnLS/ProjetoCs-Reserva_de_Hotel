@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReservaDeHotel.Data;
 
@@ -10,9 +11,11 @@ using ReservaDeHotel.Data;
 namespace ReservaDeHotel.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    partial class HotelDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231010175545_InitialMigration")]
+    partial class InitialMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.11");
@@ -181,6 +184,9 @@ namespace ReservaDeHotel.Migrations
                     b.Property<int?>("CidadeIdCidade")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("Classificacao")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Descricao")
                         .HasColumnType("TEXT");
 
@@ -229,15 +235,10 @@ namespace ReservaDeHotel.Migrations
                     b.Property<string>("MetodoPagamento")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("ReservaHotelIdReserva")
-                        .HasColumnType("INTEGER");
-
                     b.Property<decimal>("Valor")
                         .HasColumnType("TEXT");
 
                     b.HasKey("IdPagamento");
-
-                    b.HasIndex("ReservaHotelIdReserva");
 
                     b.ToTable("Pagamento");
                 });
@@ -248,15 +249,21 @@ namespace ReservaDeHotel.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("EstadiaIdEstadia")
+                    b.Property<int>("IdEstadia")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("MetodoPagamento")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("NomeHospede")
                         .HasColumnType("TEXT");
 
+                    b.Property<decimal>("Valor")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("IdReserva");
 
-                    b.HasIndex("EstadiaIdEstadia");
+                    b.HasIndex("IdEstadia");
 
                     b.ToTable("ReservaHotel");
                 });
@@ -279,18 +286,13 @@ namespace ReservaDeHotel.Migrations
                         .HasForeignKey("DonoId");
                 });
 
-            modelBuilder.Entity("ReservaDeHotel.Models.Pagamento", b =>
-                {
-                    b.HasOne("ReservaDeHotel.Models.ReservaHotel", null)
-                        .WithMany("Pagamento")
-                        .HasForeignKey("ReservaHotelIdReserva");
-                });
-
             modelBuilder.Entity("ReservaDeHotel.Models.ReservaHotel", b =>
                 {
                     b.HasOne("ReservaDeHotel.Models.EstadiaHotel", "Estadia")
                         .WithMany()
-                        .HasForeignKey("EstadiaIdEstadia");
+                        .HasForeignKey("IdEstadia")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Estadia");
                 });
@@ -308,11 +310,6 @@ namespace ReservaDeHotel.Migrations
             modelBuilder.Entity("ReservaDeHotel.Models.Hotel", b =>
                 {
                     b.Navigation("ListaAvaliacoes");
-                });
-
-            modelBuilder.Entity("ReservaDeHotel.Models.ReservaHotel", b =>
-                {
-                    b.Navigation("Pagamento");
                 });
 #pragma warning restore 612, 618
         }

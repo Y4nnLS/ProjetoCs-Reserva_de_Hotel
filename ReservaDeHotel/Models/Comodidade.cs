@@ -6,7 +6,7 @@ public class Comodidade
 {
     [Key]
     public int IDComodidade { get; set; }
-    public int NumeroDoQuarto { get; set; } // aqui a gente poderia trabalhar o numero do quarto como o ID
+    public int NumeroDoQuarto { get; set; } 
     public string? TipoDeQuarto { get; set; }
     [Column(TypeName = "decimal(6,2)")]
     public decimal PrecoPorNoite { get; set; }
