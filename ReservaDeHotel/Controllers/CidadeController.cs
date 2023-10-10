@@ -12,6 +12,7 @@ public class CidadeController : ControllerBase
     {
         _dbContext = dbContext;
     }
+    
     [HttpPost]
     [Route("cadastrar")]
     public async Task<ActionResult> Cadastrar(Cidade cidade)
